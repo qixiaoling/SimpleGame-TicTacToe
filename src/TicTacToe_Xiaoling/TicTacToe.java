@@ -14,7 +14,10 @@ public class TicTacToe {
 
         Scanner scanner = new Scanner(System.in);
         while(true){
-            playerMove(board, scanner);
+            playerTurn(board, scanner);
+            if(isGameFinished(board)){
+                break;
+            };
             printBoard(board);
             computerTurn(board);
             printBoard(board);
@@ -22,6 +25,13 @@ public class TicTacToe {
 
         //scanner.close();
         //printBoard(board);
+    }
+
+    private static boolean isGameFinished(char[][] board) {
+
+
+
+        return false;
     }
 
     private static void computerTurn(char[][] board) {
@@ -38,7 +48,7 @@ public class TicTacToe {
         placeMove(board, Integer.toString(computerMove), 'O');
     }
 
-    private static void playerMove(char[][] board, Scanner scanner) {
+    private static void playerTurn(char[][] board, Scanner scanner) {
         String userInput;
         while(true){
             System.out.println("Where would you like to play? (1-9)");
